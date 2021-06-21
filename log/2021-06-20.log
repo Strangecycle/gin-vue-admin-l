@@ -1,0 +1,9 @@
+[GIN-VUE-ADMIN]2021/06/20 - 15:59:30.412	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/20 - 15:59:30.499	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/20 - 15:59:30.499	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/20 - 15:59:30.500	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/20 - 16:05:21.189	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/20 - 16:05:21.191	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/20 - 16:05:21.191	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/20 - 16:05:21.191	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/20 - 16:05:21.191	[34minfo[0m	Server is running on 	{"address": ":8888"}

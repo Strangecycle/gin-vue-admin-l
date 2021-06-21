@@ -1,0 +1,26 @@
+[GIN-VUE-ADMIN]2021/06/17 - 00:49:30.855	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 00:50:32.711	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 22:46:17.933	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:15	use middleware logger
+[GIN-VUE-ADMIN]2021/06/17 - 22:46:17.934	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:18	use middleware cors
+[GIN-VUE-ADMIN]2021/06/17 - 22:46:17.934	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:21	register swagger handler
+[GIN-VUE-ADMIN]2021/06/17 - 22:46:17.935	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 22:48:27.991	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:15	use middleware logger
+[GIN-VUE-ADMIN]2021/06/17 - 22:48:27.992	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:18	use middleware cors
+[GIN-VUE-ADMIN]2021/06/17 - 22:48:27.992	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:21	register swagger handler
+[GIN-VUE-ADMIN]2021/06/17 - 22:48:27.994	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 22:49:49.315	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:15	use middleware logger
+[GIN-VUE-ADMIN]2021/06/17 - 22:49:49.316	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:18	use middleware cors
+[GIN-VUE-ADMIN]2021/06/17 - 22:49:49.316	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:21	register swagger handler
+[GIN-VUE-ADMIN]2021/06/17 - 22:49:49.319	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 22:54:02.274	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:15	use middleware logger
+[GIN-VUE-ADMIN]2021/06/17 - 22:54:02.275	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:18	use middleware cors
+[GIN-VUE-ADMIN]2021/06/17 - 22:54:02.275	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:21	register swagger handler
+[GIN-VUE-ADMIN]2021/06/17 - 22:54:02.277	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 22:55:20.565	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:15	use middleware logger
+[GIN-VUE-ADMIN]2021/06/17 - 22:55:20.566	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:18	use middleware cors
+[GIN-VUE-ADMIN]2021/06/17 - 22:55:20.566	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:21	register swagger handler
+[GIN-VUE-ADMIN]2021/06/17 - 22:55:20.567	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/17 - 22:57:55.863	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:15	use middleware logger
+[GIN-VUE-ADMIN]2021/06/17 - 22:57:55.864	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:18	use middleware cors
+[GIN-VUE-ADMIN]2021/06/17 - 22:57:55.864	info	D:/open-source-projects/gin-vue-admin-l/initialize/router.go:21	register swagger handler
+[GIN-VUE-ADMIN]2021/06/17 - 22:57:55.865	info	D:/open-source-projects/gin-vue-admin-l/core/server.go:27	Server is running on 	{"address": ":8888"}

@@ -1,0 +1,5 @@
+[GIN-VUE-ADMIN]2021/06/21 - 21:27:56.774	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/21 - 21:27:56.808	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/21 - 21:27:56.808	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/21 - 21:27:56.808	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/21 - 21:27:56.808	[34minfo[0m	Server is running on 	{"address": ":8888"}
