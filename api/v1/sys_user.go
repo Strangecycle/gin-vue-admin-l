@@ -77,12 +77,18 @@ func tokenNext(c *gin.Context, user model.SysUser) {
 		}
 		response.OkWithDetailed(response.LoginResponse{
 			User:      user,
-			Token:     jwtStr,
+			Token:     token,
 			ExpiresAt: claims.StandardClaims.ExpiresAt * 1000,
 		}, "登录成功", c)
 	}
 }
 
+// @Tags Base
+// @Summary 用户登录
+// @Produce  application/json
+// @Param data body request.Login true "用户名, 密码, 验证码"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"登陆成功"}"
+// @Router /base/login [post]
 func Login(c *gin.Context) {
 	var l request.Login
 	_ = c.ShouldBindJSON(&l)

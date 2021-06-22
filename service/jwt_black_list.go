@@ -16,8 +16,8 @@ func JsonInBlacklist(jwtBlack model.JwtBlacklist) (err error) {
 
 // token 是否在黑名单中
 func IsInBlacklist(jwt string) bool {
-	err := global.GVA_DB.Where("jwt = ?", jwt).First(&model.JwtBlacklist{}).Error
-	return errors.Is(err, gorm.ErrRecordNotFound)
+	isNotFound := errors.Is(global.GVA_DB.Where("jwt = ?", jwt).First(&model.JwtBlacklist{}).Error, gorm.ErrRecordNotFound)
+	return !isNotFound
 }
 
 // 从 redis 中获取 jwt

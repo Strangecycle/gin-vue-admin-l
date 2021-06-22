@@ -2,6 +2,12 @@ captcha:
   key-long: 6
   img-width: 240
   img-height: 80
+casbin:
+  model-path: ./resource/rbac_model.conf
+jwt:
+  signing-key: qmPlus
+  expires-time: 604800
+  buffer-time: 86400
 local:
   path: uploads/file
 mysql:
@@ -14,7 +20,12 @@ mysql:
   max-open-conns: 0
   log-mode: false
   log-zap: ""
+redis:
+  db: 0
+  addr: 127.0.0.1:6379
+  password: ""
 system:
+  env: develop
   addr: 8888
   db-type: mysql
   use-multipoint: true
@@ -22,9 +33,9 @@ timer:
   start: true
   spec: '@daily'
   detail:
-    - tableName: sys_operation_records
-      compareField: created_at
-      interval: 2160h
+  - tableName: sys_operation_records
+    compareField: created_at
+    interval: 2160h
 zap:
   level: info
   format: console
@@ -35,11 +46,3 @@ zap:
   encode-level: LowercaseColorLevelEncoder
   stacktrace-key: stacktrace
   log-in-console: true
-jwt:
-  signing-key: qmPlus
-  expires-time: 604800
-  buffer-time: 86400
-redis:
-  db: 0
-  addr: 127.0.0.1:6379
-  password: ""
