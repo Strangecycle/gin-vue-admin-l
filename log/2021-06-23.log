@@ -40,3 +40,27 @@
 [GIN-VUE-ADMIN]2021/06/23 - 00:10:22.106	[34minfo[0m	register swagger handler
 [GIN-VUE-ADMIN]2021/06/23 - 00:10:22.106	[34minfo[0m	router register success
 [GIN-VUE-ADMIN]2021/06/23 - 00:10:22.108	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/23 - 22:47:24.424	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/23 - 22:47:24.439	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/23 - 22:47:24.439	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/23 - 22:47:24.439	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/23 - 22:47:24.439	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/06/23 - 22:47:24.440	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/23 - 22:48:24.365	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/23 - 22:48:24.367	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/23 - 22:48:24.367	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/23 - 22:48:24.367	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/23 - 22:48:24.367	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/06/23 - 22:48:24.368	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/23 - 23:06:26.174	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/23 - 23:06:26.176	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/23 - 23:06:26.176	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/23 - 23:06:26.176	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/23 - 23:06:26.176	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/06/23 - 23:06:26.178	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/23 - 23:35:05.361	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/23 - 23:35:05.362	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/23 - 23:35:05.363	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/23 - 23:35:05.363	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/23 - 23:35:05.363	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/06/23 - 23:35:05.363	[34minfo[0m	Server is running on 	{"address": ":8888"}

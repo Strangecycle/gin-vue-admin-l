@@ -85,6 +85,7 @@ func InitDB(conf request.InitDB) error {
 		model.SysBaseMenu{},
 		model.SysBaseMenuParameter{},
 		model.JwtBlacklist{},
+		model.SysOperationRecord{},
 	)
 	if err != nil {
 		_ = writeConfig(global.GVA_VP, baseConf)

@@ -28,7 +28,7 @@ system:
   env: develop
   addr: 8888
   db-type: mysql
-  use-multipoint: true
+  use-multipoint: false
 timer:
   start: true
   spec: '@daily'

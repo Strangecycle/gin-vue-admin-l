@@ -112,3 +112,163 @@ func Login(c *gin.Context) {
 	}
 	tokenNext(c, *user)
 }
+
+// @Tags SysUser
+// @Summary 分页获取用户列表
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body request.PageInfo true "页码, 每页大小"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
+// @Router /user/getUserList [post]
+func GetUserList(c *gin.Context) {
+	var pageInfo request.PageInfo
+	_ = c.ShouldBindJSON(&pageInfo)
+	if err := utils.Verify(pageInfo, utils.PageInfoVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	err, list, total := service.GetUserInfoList(pageInfo)
+	if err != nil {
+		global.GVA_LOG.Error("获取失败!", zap.Any("err", err))
+		response.FailWithMessage("获取失败", c)
+		return
+	}
+
+	response.OkWithDetailed(response.PageResult{
+		List:     list,
+		Total:    total,
+		Page:     pageInfo.Page,
+		PageSize: pageInfo.PageSize,
+	}, "获取成功", c)
+}
+
+// @Tags SysUser
+// @Summary 用户注册账号
+// @Produce  application/json
+// @Param data body model.SysUser true "用户名, 昵称, 密码, 角色ID"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"注册成功"}"
+// @Router /user/register [post]
+func Register(c *gin.Context) {
+	var r request.Register
+	_ = c.ShouldBindJSON(&r)
+	if err := utils.Verify(r, utils.RegisterVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	u := &model.SysUser{
+		Username:    r.Username,
+		Password:    r.Password,
+		NickName:    r.NickName,
+		HeaderImg:   r.NickName,
+		AuthorityId: r.AuthorityId,
+	}
+	err, user := service.Register(*u)
+	if err != nil {
+		global.GVA_LOG.Error("注册失败!", zap.Any("err", err))
+		response.FailWithDetailed(response.SysUserResponse{User: user}, "注册失败", c)
+		return
+	}
+	response.OkWithDetailed(response.SysUserResponse{User: user}, "注册成功", c)
+}
+
+// @Tags SysUser
+// @Summary 删除用户
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body request.GetById true "用户ID"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
+// @Router /user/deleteUser [delete]
+func DeleteUser(c *gin.Context) {
+	var reqId request.GetById
+	_ = c.ShouldBindJSON(&reqId)
+	if err := utils.Verify(reqId, utils.IdVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	jwtId := getUserID(c)
+	if jwtId == uint(reqId.ID) {
+		response.FailWithMessage("删除失败, 自杀失败", c)
+		return
+	}
+
+	err := service.DeleteUser(reqId.ID)
+	if err != nil {
+		global.GVA_LOG.Error("删除失败!", zap.Any("err", err))
+		response.FailWithMessage("删除失败", c)
+		return
+	}
+	response.OkWithMessage("删除成功", c)
+}
+
+// @Tags SysUser
+// @Summary 设置用户权限
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body request.SetUserAuth true "用户UUID, 角色ID"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
+// @Router /user/setUserAuthority [post]
+func SetUserAuthority(c *gin.Context) {
+	var sua request.SetUserAuth
+	_ = c.ShouldBindJSON(&sua)
+	if UserVerifyErr := utils.Verify(sua, utils.SetUserAuthorityVerify); UserVerifyErr != nil {
+		response.FailWithMessage(UserVerifyErr.Error(), c)
+		return
+	}
+
+	err := service.SetUserAuthority(sua.UUID, sua.AuthorityId)
+	if err != nil {
+		global.GVA_LOG.Error("修改失败!", zap.Any("err", err))
+		response.FailWithMessage("修改失败", c)
+		return
+	}
+	response.OkWithMessage("修改成功", c)
+}
+
+// @Tags SysUser
+// @Summary 用户修改密码
+// @Security ApiKeyAuth
+// @Produce  application/json
+// @Param data body request.ChangePasswordStruct true "用户名, 原密码, 新密码"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
+// @Router /user/changePassword [put]
+func ChangePassword(c *gin.Context) {
+	var user request.ChangePasswordRequest
+	_ = c.ShouldBindJSON(&user)
+	if err := utils.Verify(user, utils.ChangePasswordVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	u := &model.SysUser{Username: user.Username, Password: user.Password}
+	err, _ := service.ChangePassword(u, user.NewPassword)
+	if err != nil {
+		global.GVA_LOG.Error("修改失败!", zap.Any("err", err))
+		response.FailWithMessage("修改失败，原密码与当前账户不符", c)
+		return
+	}
+	response.OkWithMessage("修改成功", c)
+}
+
+// 从 Gin 的 Context 中获取从 jwt 解析出来的用户角色 id
+func getUserAuthorityId(c *gin.Context) string {
+	claims, exists := c.Get("claims")
+	if !exists {
+		global.GVA_LOG.Error("从 Gin 的 Context 中获取从 jwt 解析出来的用户 AuthorityId 失败, 请检查路由是否使用 jwt 中间件!")
+		return ""
+	}
+	return claims.(*request.CustomClaims).AuthorityId
+}
+
+func getUserID(c *gin.Context) uint {
+	claims, exists := c.Get("claims")
+	if !exists {
+		return 0
+	}
+	return claims.(*request.CustomClaims).ID
+}

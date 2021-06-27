@@ -1,0 +1,12 @@
+[GIN-VUE-ADMIN]2021/06/24 - 00:15:25.322	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/24 - 00:15:25.397	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/24 - 00:15:25.397	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/24 - 00:15:25.397	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/24 - 00:15:25.397	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/06/24 - 00:15:25.399	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/06/24 - 00:18:15.927	[34minfo[0m	redis connect ping response:	{"pong": "PONG"}
+[GIN-VUE-ADMIN]2021/06/24 - 00:18:15.945	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/06/24 - 00:18:15.945	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/06/24 - 00:18:15.945	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/06/24 - 00:18:15.945	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/06/24 - 00:18:15.946	[34minfo[0m	Server is running on 	{"address": ":8888"}
