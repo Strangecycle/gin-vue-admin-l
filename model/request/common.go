@@ -8,3 +8,7 @@ type PageInfo struct {
 type GetById struct {
 	ID float64 `json:"id" form:"id"`
 }
+
+type GetAuthorityId struct {
+	AuthorityId string `json:"authorityId"`
+}

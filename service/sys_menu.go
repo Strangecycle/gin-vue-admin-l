@@ -3,6 +3,8 @@ package service
 import (
 	"gin-vue-admin-l/global"
 	"gin-vue-admin-l/model"
+	"gin-vue-admin-l/model/request"
+	"strconv"
 )
 
 // 获取路由总树 map
@@ -42,4 +44,47 @@ func GetMenuTree(authId string) (err error, menus []model.SysMenu) {
 		err = getChildrenList(&menus[i], menuTree)
 	}
 	return err, menus
+}
+
+// 获取路由总树 map
+func getBaseMenuTreeMap() (err error, treeMap map[string][]model.SysBaseMenu) {
+	var allMenus []model.SysBaseMenu
+	treeMap = make(map[string][]model.SysBaseMenu)
+	err = global.GVA_DB.Order("sort").Preload("Parameters").Find(&allMenus).Error
+	for _, v := range allMenus {
+		treeMap[v.ParentId] = append(treeMap[v.ParentId], v)
+	}
+	return err, treeMap
+}
+
+// 获取菜单的子菜单
+func getBaseChildrenList(menu *model.SysBaseMenu, treeMap map[string][]model.SysBaseMenu) (err error) {
+	menu.Children = treeMap[strconv.Itoa(int(menu.ID))]
+	for i := 0; i < len(menu.Children); i++ {
+		err = getBaseChildrenList(&menu.Children[i], treeMap)
+	}
+	return err
+}
+
+// 获取基础路由树
+func GetBaseMenuTree() (err error, menus []model.SysBaseMenu) {
+	err, treeMap := getBaseMenuTreeMap()
+	menus = treeMap["0"]
+	for i := 0; i < len(menus); i++ {
+		err = getBaseChildrenList(&menus[i], treeMap)
+	}
+	return err, menus
+}
+
+func GetMenuAuthority(param *request.GetAuthorityId) (err error, menus []model.SysMenu) {
+	err = global.GVA_DB.Where("authority_id = ?", param.AuthorityId).Order("sort").Find(&menus).Error
+	return err, menus
+}
+
+func AddMenuAuthority(menus []model.SysBaseMenu, authId string) (err error) {
+	var auth model.SysAuthority
+	auth.AuthorityId = authId
+	auth.SysBaseMenus = menus
+	err = SetMenuAuthority(&auth)
+	return err
 }

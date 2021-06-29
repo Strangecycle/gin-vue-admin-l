@@ -86,6 +86,7 @@ func InitDB(conf request.InitDB) error {
 		model.SysBaseMenuParameter{},
 		model.JwtBlacklist{},
 		model.SysOperationRecord{},
+		model.SysApi{},
 	)
 	if err != nil {
 		_ = writeConfig(global.GVA_VP, baseConf)
@@ -101,6 +102,7 @@ func InitDB(conf request.InitDB) error {
 		source.AuthoritiesMenus,
 		source.AuthorityMenu, // 视图
 		source.Casbin,        // casbin 策略表
+		source.Api,
 	)
 
 	// TODO global.GVA_CONFIG.AutoCode.Root

@@ -1,7 +1,10 @@
 package service
 
 import (
+	"errors"
 	"gin-vue-admin-l/global"
+	"gin-vue-admin-l/model"
+	"gin-vue-admin-l/model/request"
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/util"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
@@ -42,4 +45,43 @@ func ParamsMatchFunc(args ...interface{}) (interface{}, error) {
 	n2 := args[1].(string)
 
 	return ParamsMatch(n1, n2), nil
+}
+
+func ClearCasbin(v int, p ...string) bool {
+	e := Casbin()
+	success, _ := e.RemoveFilteredPolicy(v, p...)
+	return success
+}
+
+func GetPolicyPathByAuthorityId(authId string) (pathMaps []request.CasbinInfo) {
+	e := Casbin()
+	list := e.GetFilteredPolicy(0, authId)
+	for _, v := range list {
+		pathMaps = append(pathMaps, request.CasbinInfo{
+			Path:   v[1],
+			Method: v[2],
+		})
+	}
+	return pathMaps
+}
+
+func UpdateCasbin(authId string, infos []request.CasbinInfo) (err error) {
+	// 先从数据库将当前 authorityId 的权限全部删除
+	ClearCasbin(0, authId)
+	rules := [][]string{}
+	for _, v := range infos {
+		cm := model.CasbinModel{
+			Ptype:       "p",
+			AuthorityId: authId,
+			Path:        v.Path,
+			Method:      v.Method,
+		}
+		rules = append(rules, []string{cm.AuthorityId, cm.Path, cm.Method})
+	}
+	e := Casbin()
+	success, _ := e.AddPolicies(rules)
+	if !success {
+		return errors.New("存在相同api,添加失败,请联系管理员")
+	}
+	return nil
 }
