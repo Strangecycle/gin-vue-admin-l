@@ -1,11 +1,16 @@
 package model
 
-import "time"
+import (
+	"time"
+)
 
 // 用户权限表
 type SysAuthority struct {
-	CreatedAt     time.Time  // 创建时间
-	UpdatedAt     time.Time  // 更新时间
+	CreatedAt time.Time // 创建时间
+	UpdatedAt time.Time // 更新时间
+	// 模型包含了一个 gorm.DeletedAt 字段（gorm.Model 已经包含了该字段)，它将自动获得软删除的能力
+	// 拥有软删除能力的模型调用 Delete 时，记录不会被从数据库中真正删除。但 GORM 会将 DeletedAt 置为当前时间， 并且不能再通过正常的查询方法找到该记录
+	// 使用 db.Unscoped 可以找到被软删除的记录并调用 Delete 永久删除这些数据
 	DeletedAt     *time.Time `sql:"index"`
 	AuthorityId   string     `json:"authorityId" gorm:"not null;unique;primary_key;comment:角色ID;size:90"` // 角色 ID
 	AuthorityName string     `json:"authorityName" gorm:"comment:角色名"`                                    // 角色名

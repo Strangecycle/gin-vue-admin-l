@@ -90,3 +90,82 @@ func SetDataAuthority(c *gin.Context) {
 	}
 	response.OkWithMessage("设置成功", c)
 }
+
+// @Tags Authority
+// @Summary 更新角色信息
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body model.SysAuthority true "权限id, 权限名, 父角色id"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"更新成功"}"
+// @Router /authority/updateAuthority [post]
+func UpdateAuthority(c *gin.Context) {
+	var auth model.SysAuthority
+	_ = c.ShouldBindJSON(&auth)
+	if err := utils.Verify(auth, utils.AuthorityVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	err, authority := service.UpdateAuthority(auth)
+	if err != nil {
+		global.GVA_LOG.Error("更新失败!", zap.Any("err", err))
+		response.FailWithMessage("更新失败"+err.Error(), c)
+		return
+	}
+	response.OkWithDetailed(response.SysAuthorityResponse{Authority: authority}, "更新成功", c)
+}
+
+// @Tags Authority
+// @Summary 删除角色
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body model.SysAuthority true "删除角色"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
+// @Router /authority/deleteAuthority [post]
+func DeleteAuthority(c *gin.Context) {
+	var auth model.SysAuthority
+	_ = c.ShouldBindJSON(&auth)
+	if err := utils.Verify(auth, utils.AuthorityIdVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	// 删除角色之前需要判断是否有用户正在使用此角色
+	if err := service.DeleteAuthority(&auth); err != nil {
+		global.GVA_LOG.Error("删除失败!", zap.Any("err", err))
+		response.FailWithMessage("删除失败"+err.Error(), c)
+	} else {
+		response.OkWithMessage("删除成功", c)
+	}
+}
+
+// @Tags Authority
+// @Summary 拷贝角色
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body response.SysAuthorityCopyResponse true "旧角色id, 新权限id, 新权限名, 新父角色id"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"拷贝成功"}"
+// @Router /authority/copyAuthority [post]
+func CopyAuthority(c *gin.Context) {
+	var infoCopy response.SysAuthorityCopyResponse
+	_ = c.ShouldBindJSON(&infoCopy)
+	if err := utils.Verify(infoCopy, utils.OldAuthorityVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	if err := utils.Verify(infoCopy.Authority, utils.AuthorityVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	err, authority := service.CopyAuthority(infoCopy)
+	if err != nil {
+		global.GVA_LOG.Error("拷贝失败!", zap.Any("err", err))
+		response.FailWithMessage("拷贝失败"+err.Error(), c)
+		return
+	}
+	response.OkWithDetailed(response.SysAuthorityResponse{Authority: authority}, "拷贝成功", c)
+}

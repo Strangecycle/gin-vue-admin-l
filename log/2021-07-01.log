@@ -5,3 +5,38 @@
 [GIN-VUE-ADMIN]2021/07/01 - 19:22:32.538	[34minfo[0m	Server is running on 	{"address": ":8888"}
 [GIN-VUE-ADMIN]2021/07/01 - 19:23:07.276	[34minfo[0m	数据库无需初始化
 [GIN-VUE-ADMIN]2021/07/01 - 19:24:03.909	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/01 - 21:25:09.787	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/01 - 21:25:09.788	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/01 - 21:25:09.788	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/01 - 21:25:09.789	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/01 - 21:25:09.790	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/01 - 21:32:05.193	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/01 - 21:32:05.194	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/01 - 21:32:05.194	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/01 - 21:32:05.195	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/01 - 21:32:05.196	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/01 - 21:56:37.622	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/01 - 21:56:37.624	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/01 - 21:56:37.624	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/01 - 21:56:37.624	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/01 - 21:56:37.625	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/01 - 22:53:22.811	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/01 - 22:53:22.813	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/01 - 22:53:22.813	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/01 - 22:53:22.813	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/01 - 22:53:22.813	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:15.731	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:15.733	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:15.733	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:15.733	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:15.734	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:26.135	[31merror[0m	拷贝失败!	{"err": "存在相同角色id"}
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:55.867	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:55.868	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:55.868	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:55.868	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/01 - 22:55:55.869	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/01 - 23:10:08.873	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/01 - 23:10:54.897	[31merror[0m	拷贝失败!	{"err": "存在相同角色id"}
+[GIN-VUE-ADMIN]2021/07/01 - 23:11:29.672	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/01 - 23:33:03.404	[31merror[0m	拷贝失败!	{"err": "存在相同角色id"}
