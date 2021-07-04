@@ -85,3 +85,12 @@ func UpdateCasbin(authId string, infos []request.CasbinInfo) (err error) {
 	}
 	return nil
 }
+
+// 更新 Api 时，casbin 表中也同步更新
+func UpdateCasbinApi(op string, np string, om string, nm string) (err error) {
+	err = global.GVA_DB.Table("casbin_rule").Model(&model.CasbinModel{}).Where("v1 = ? AND v2 = ?", op, om).Updates(map[string]interface{}{
+		"v1": np,
+		"v2": nm,
+	}).Error
+	return err
+}
