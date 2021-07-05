@@ -32,12 +32,13 @@ func Routers() *gin.Engine {
 	privateGroup := r.Group("")
 	privateGroup.Use(middleware.JWTAuth(), middleware.CasbinHandler())
 	{
-		router.InitJwtRouter(privateGroup)       // jwt 相关路由
-		router.InitMenuRouter(privateGroup)      // menu 相关路由
-		router.InitUserRouter(privateGroup)      // 用户相关路由
-		router.InitAuthorityRouter(privateGroup) // 角色相关路由
-		router.InitApiRouter(privateGroup)       // 功能 api 路由
-		router.InitCasbinRouter(privateGroup)    // 权限相关路由
+		router.InitJwtRouter(privateGroup)                // jwt 相关路由
+		router.InitMenuRouter(privateGroup)               // menu 相关路由
+		router.InitUserRouter(privateGroup)               // 用户相关路由
+		router.InitAuthorityRouter(privateGroup)          // 角色相关路由
+		router.InitApiRouter(privateGroup)                // 功能 api 路由
+		router.InitCasbinRouter(privateGroup)             // 权限相关路由
+		router.InitSysOperationRecordRouter(privateGroup) // 操作记录路由
 	}
 
 	global.GVA_LOG.Info("router register success")

@@ -98,3 +98,9 @@ func DeleteApi(api model.SysApi) (err error) {
 	ClearCasbin(1, api.Path, api.Method)
 	return err
 }
+
+func DeleteApisByIds(ids request.IdsReq) (err error) {
+	err = global.GVA_DB.Where("id IN (?)", ids.Ids).Delete(&model.SysApi{}).Error
+	// TODO 批量删除 casbin 表中的数据
+	return err
+}

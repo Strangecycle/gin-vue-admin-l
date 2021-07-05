@@ -15,7 +15,7 @@ func main() {
 	global.GVA_VP = core.Viper()      // 初始化 viper
 	global.GVA_LOG = core.Zap()       // 初始化 zap 日志库
 	global.GVA_DB = initialize.Gorm() // 初始化数据库连接
-	// 初始化定时任务，用于定时清理数据库表数据
+	// 初始化定时任务，用于定时清理数据库表数据（如操作记录）
 	initialize.Timer()
 
 	if global.GVA_DB != nil {
