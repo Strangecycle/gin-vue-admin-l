@@ -79,3 +79,8 @@
 [GIN-VUE-ADMIN]2021/07/05 - 22:29:29.157	[34minfo[0m	register swagger handler
 [GIN-VUE-ADMIN]2021/07/05 - 22:29:29.157	[34minfo[0m	router register success
 [GIN-VUE-ADMIN]2021/07/05 - 22:29:29.158	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/05 - 22:31:10.796	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/05 - 22:31:10.797	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/05 - 22:31:10.798	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/05 - 22:31:10.798	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/05 - 22:31:10.799	[34minfo[0m	Server is running on 	{"address": ":8888"}

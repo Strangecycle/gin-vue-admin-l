@@ -7,7 +7,6 @@ import (
 	"gin-vue-admin-l/global"
 	"gin-vue-admin-l/model"
 	"gin-vue-admin-l/model/request"
-	"gin-vue-admin-l/source"
 	"gin-vue-admin-l/utils"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
@@ -80,30 +79,32 @@ func InitDB(conf request.InitDB) error {
 
 	// 自动创建表
 	err = global.GVA_DB.AutoMigrate(
-		model.SysUser{},
-		model.SysAuthority{},
-		model.SysBaseMenu{},
-		model.SysBaseMenuParameter{},
-		model.JwtBlacklist{},
-		model.SysOperationRecord{},
-		model.SysApi{},
+		// model.SysUser{},
+		// model.SysAuthority{},
+		// model.SysBaseMenu{},
+		// model.SysBaseMenuParameter{},
+		// model.JwtBlacklist{},
+		// model.SysOperationRecord{},
+		// model.SysApi{},
+		// 示例模块
+		// model.ExaFileUploadAndDownload{},
 	)
 	if err != nil {
 		_ = writeConfig(global.GVA_VP, baseConf)
 		return err
 	}
 
-	// initDB() 向数据表中填入初始数据
-	initDB(
-		source.Admin,
-		source.Authority,
-		source.DataAuthorities,
-		source.BaseMenu,
-		source.AuthoritiesMenus,
-		source.AuthorityMenu, // 视图
-		source.Casbin,        // casbin 策略表
-		source.Api,
-	)
+	// 向数据表中填入初始数据
+	// initDB(
+	// 	source.Admin,
+	// 	source.Authority,
+	// 	source.DataAuthorities,
+	// 	source.BaseMenu,
+	// 	source.AuthoritiesMenus,
+	// 	source.AuthorityMenu, // 视图
+	// 	source.Casbin,        // casbin 策略表
+	// 	source.Api,
+	// )
 
 	// TODO global.GVA_CONFIG.AutoCode.Root
 

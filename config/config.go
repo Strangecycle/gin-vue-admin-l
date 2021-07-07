@@ -11,4 +11,6 @@ type Server struct {
 	JWT     JWT     `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
 	Redis   Redis   `mapstructure:"redis" json:"redis" yaml:"redis"`
 	Casbin  Casbin  `mapstructure:"casbin" json:"casbin" yaml:"casbin"`
+	// 示例模块
+	Excel Excel `mapstructure:"excel" json:"excel" yaml:"excel"`
 }

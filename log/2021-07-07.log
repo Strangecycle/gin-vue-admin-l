@@ -1,0 +1,40 @@
+[GIN-VUE-ADMIN]2021/07/07 - 22:00:18.792	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/07 - 22:00:18.805	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/07 - 22:00:18.806	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/07 - 22:00:18.806	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/07 - 22:00:18.807	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/07 - 22:00:43.896	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:11:56.273	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:28:32.046	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/07 - 22:28:32.047	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/07 - 22:28:32.048	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/07 - 22:28:32.048	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/07 - 22:28:32.050	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/07 - 22:29:10.818	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:29:27.865	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:36:38.787	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/07 - 22:36:38.788	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/07 - 22:36:38.788	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/07 - 22:36:38.789	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/07 - 22:36:38.790	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:11.299	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:11.301	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:11.301	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:11.302	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:11.303	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:29.828	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:29.829	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:29.829	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:29.830	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:29.832	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:33.437	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:38:51.477	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:03.356	[34minfo[0m	use middleware logger
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:03.358	[34minfo[0m	use middleware cors
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:03.358	[34minfo[0m	register swagger handler
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:03.358	[34minfo[0m	router register success
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:03.359	[34minfo[0m	Server is running on 	{"address": ":8888"}
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:29.313	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:44:42.001	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:48:21.921	[34minfo[0m	数据库无需初始化
+[GIN-VUE-ADMIN]2021/07/07 - 22:49:16.502	[34minfo[0m	数据库无需初始化

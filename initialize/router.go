@@ -39,6 +39,10 @@ func Routers() *gin.Engine {
 		router.InitApiRouter(privateGroup)                // 功能 api 路由
 		router.InitCasbinRouter(privateGroup)             // 权限相关路由
 		router.InitSysOperationRecordRouter(privateGroup) // 操作记录路由
+
+		// 示例模块
+		router.InitExcelRouter(privateGroup)                 // 表格导入导出
+		router.InitFileUploadAndDownloadRouter(privateGroup) // 文件上传下载功能路由
 	}
 
 	global.GVA_LOG.Info("router register success")

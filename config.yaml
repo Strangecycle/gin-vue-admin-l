@@ -4,6 +4,8 @@ captcha:
   img-height: 80
 casbin:
   model-path: ./resource/rbac_model.conf
+excel:
+  dir: ./resource/excel/
 jwt:
   signing-key: qmPlus
   expires-time: 604800
@@ -29,13 +31,14 @@ system:
   addr: 8888
   db-type: mysql
   use-multipoint: false
+  oss-type: local
 timer:
   start: true
   spec: '@daily'
   detail:
-  - tableName: sys_operation_records
-    compareField: created_at
-    interval: 2160h
+    - tableName: sys_operation_records
+      compareField: created_at
+      interval: 2160h
 zap:
   level: info
   format: console
