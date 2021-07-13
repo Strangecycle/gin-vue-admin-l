@@ -68,3 +68,8 @@ func ChangePassword(u *model.SysUser, newPwd string) (err error, userInter *mode
 	err = global.GVA_DB.Where("username = ?", u.Username).First(&user).Update("password", newPwdMD5).Error
 	return err, u
 }
+
+func SetUserInfo(user *model.SysUser) (err error, userInter model.SysUser) {
+	err = global.GVA_DB.Updates(&user).Error
+	return err, *user
+}

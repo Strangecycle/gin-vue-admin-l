@@ -5,6 +5,8 @@ import (
 	"gin-vue-admin-l/middleware"
 	"gin-vue-admin-l/router"
 	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"net/http"
 )
 
@@ -19,6 +21,7 @@ func Routers() *gin.Engine {
 	global.GVA_LOG.Info("use middleware cors")
 
 	// TODO swagger 路由
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	global.GVA_LOG.Info("register swagger handler")
 
 	// 公共路由（无需鉴权）
@@ -39,6 +42,7 @@ func Routers() *gin.Engine {
 		router.InitApiRouter(privateGroup)                // 功能 api 路由
 		router.InitCasbinRouter(privateGroup)             // 权限相关路由
 		router.InitSysOperationRecordRouter(privateGroup) // 操作记录路由
+		router.InitSystemRouter(privateGroup)             // 系统相关
 
 		// 示例模块
 		router.InitExcelRouter(privateGroup)                 // 表格导入导出

@@ -255,6 +255,31 @@ func ChangePassword(c *gin.Context) {
 	response.OkWithMessage("修改成功", c)
 }
 
+// @Tags SysUser
+// @Summary 设置用户信息
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body model.SysUser true "ID, 用户名, 昵称, 头像链接"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"设置成功"}"
+// @Router /user/setUserInfo [put]
+func SetUserInfo(c *gin.Context) {
+	var user model.SysUser
+	_ = c.ShouldBindJSON(&user)
+	if err := utils.Verify(user, utils.IdVerify); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+
+	err, userInter := service.SetUserInfo(&user)
+	if err != nil {
+		global.GVA_LOG.Error("设置失败!", zap.Any("err", err))
+		response.FailWithMessage("设置失败", c)
+		return
+	}
+	response.OkWithDetailed(gin.H{"userInfo": userInter}, "设置成功", c)
+}
+
 // 从 Gin 的 Context 中获取从 jwt 解析出来的用户角色 id
 func getUserAuthorityId(c *gin.Context) string {
 	claims, exists := c.Get("claims")

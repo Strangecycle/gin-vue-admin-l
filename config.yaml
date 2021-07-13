@@ -36,9 +36,9 @@ timer:
   start: true
   spec: '@daily'
   detail:
-    - tableName: sys_operation_records
-      compareField: created_at
-      interval: 2160h
+  - tableName: sys_operation_records
+    compareField: created_at
+    interval: 2160h
 zap:
   level: info
   format: console
